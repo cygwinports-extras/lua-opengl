@@ -1,0 +1,55 @@
+lua-opengl
+------------------------------------------
+LuaGL provides access to all the OpenGL functionality from Lua.
+Partial bindings for GLUT are also included.
+
+Runtime requirements:
+  cygwin-1.5.25-7
+  libGL1-7.0.2-1
+  libglut3-2.4.0-1
+  lua-5.1.3-1
+
+Build requirements:
+  binutils-20060817-1
+  cygport-0.3.8-1
+  gcc-core-3.4.4-3
+  make-3.81-1
+
+Canonical website:
+  http://luaforge.net/projects/
+
+Canonical download:
+  http://luaforge.net/projects/  
+
+-------------------------------------------
+
+Build instructions:
+  unpack lua-opengl-1.01-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./lua-opengl-1.01-X.cygport all
+
+This will create:
+  /usr/src/lua-opengl-1.01-X-src.tar.bz2
+  /usr/src/lua-opengl-1.01-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/lib/lua/5.1/glut.dll
+  /usr/lib/lua/5.1/opengl.dll
+  /usr/share/doc/lua-opengl-1.01/HISTORY.txt
+  /usr/share/doc/lua-opengl-1.01/README.txt
+
+------------------
+
+Port Notes:
+
+----- version 1.01-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

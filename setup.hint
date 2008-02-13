@@ -1,0 +1,5 @@
+category: Lua
+requires: cygwin lua libGL1 libglut3
+sdesc: "Lua OpenGL and GLUT bindings"
+ldesc: "LuaGL provides access to all the OpenGL functionality from Lua.  
+Partial bindings for GLUT are also included."

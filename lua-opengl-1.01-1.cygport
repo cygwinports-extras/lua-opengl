@@ -1,0 +1,26 @@
+inherit lua
+
+DESCRIPTION="Lua OpenGL and GLUT bindings"
+HOMEPAGE="http://luagl.wikidot.com/"
+SRC_URI="mirror://sourceforge/luagl/LuaGL_v${PV//.}.tar.bz2"
+SRC_DIR="LuaGL"
+
+src_compile() {
+	lndirs
+	cd ${B}/src
+	verbose gcc -shared  ${CFLAGS} -I../include ${LUA_CFLAGS} -I/usr/include/GL \
+		 -o opengl.dll LuaGL.c -lGL ${LUA_LIBS} || error "opengl.dll link failed"
+	verbose gcc -shared  ${CFLAGS} -I../include ${LUA_CFLAGS} -I/usr/include/GL \
+		-o glut.dll LuaGlut.c -lglut ${LUA_LIBS} || error "glut.dll link failed"
+}
+
+src_test() {
+	cd ${B}/src
+	${LUA} -lglut -lopengl ../tests/test1.lua
+}
+
+src_install() {
+	cd ${B}/src
+	exeinto ${LUA_LIBDIR}
+	doexe *.dll
+}
